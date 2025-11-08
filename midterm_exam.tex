@@ -1,0 +1,363 @@
+\documentclass[10pt,legalpaper]{exam}
+\printanswers
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}  % For including images
+\graphicspath{{./img/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.jpg,.png}
+
+\usepackage{multicol}
+\usepackage{listings}  % For formatting code
+\usepackage{enumitem}
+
+% Define C++ syntax highlighting with color
+\lstset{
+    language=C++,
+    basicstyle=\ttfamily\footnotesize, 		% Font style and size
+    keywordstyle=\color{blue},         		% Color for keywords
+    stringstyle=\color{red},           		% Color for strings
+    commentstyle=\color{green!50!black}, 	% Color for comments
+    numberstyle=\tiny\color{gray},    		% Line number color and size
+    numbers=none,                      		% Line numbers on the left
+    showstringspaces=false,            		% Don't display spaces in strings
+    tabsize=4,                         		% Set tab width
+    breaklines=true,                   		% Automatic line breaks
+    breakatwhitespace=true,            		% Break lines at whitespace
+    captionpos=b                       		% Caption at bottom
+}
+
+
+\usepackage{geometry}  % To adjust margins
+\usepackage{xcolor} % For text color
+\usepackage{ifthen}  % For conditional statements
+\usepackage[utf8]{inputenc}  % Required for UTF-8 support
+\usepackage{array}  % For advanced table formatting
+\usepackage{booktabs}  % For better-looking tables (optional)
+\usepackage{tcolorbox}
+
+% Define a toggle: set to true to show answers, false to hide them
+\newboolean{showanswers}
+\setboolean{showanswers}{false}  % Change this to true to show correct answers
+
+% Adjusting margins
+\geometry{
+    top=0.5in,     % Top margin
+    bottom=1in,   % Bottom margin
+    left=0.6in,     % Left margin
+    right=0.6in,    % Right margin
+}
+
+% Title and general formatting
+\title{\vspace{-1.7cm}MIDTERM EXAMINATION\\ IT 304 -- NETWORKING 2}
+\author{Prepared by: Jaafar J. Omar}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% Student information
+\noindent
+Name:\underline{\hspace{8cm}} \hfill Date:\underline{\hspace{5cm}} \hfill Section:\underline{\hspace{8cm}}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Instructions:}
+
+\noindent
+Please read each question carefully before selecting/providing your answer. Choose the most accurate answer for each question.
+
+\vspace{0.5cm}
+
+% Change to a single column layout
+\begin{questions}
+
+	% Q1
+	\question  The rules that govern network communications including the message format, message size, timing, and encapsulation, are known as network: \\
+	\begin{oneparchoices}
+		\choice signaling
+		\CorrectChoice protocols
+		\choice messaging
+		\choice encoding
+	\end{oneparchoices}
+
+	\question Which protocol is responsible for guaranteeing reliable delivery? \\
+	\begin{oneparchoices}
+		\CorrectChoice TCP
+		\choice Ethernet
+		\choice HTTP
+		\choice IP
+	\end{oneparchoices}
+
+	\question Which protocol is used by routers to forward messages? \\
+	\begin{oneparchoices}
+		\choice Ethernet
+		\choice HTTP
+		\choice TCP
+		\CorrectChoice IP
+	\end{oneparchoices}
+
+	\question[2] Which two layers of the OSI Model maps directly as the single network access layer in the TCP/IP model? (Choose two) \\
+	\begin{oneparchoices}
+		\CorrectChoice data link
+		\choice application
+		\CorrectChoice physical
+		\choice transport
+		\choice presentation
+		\choice network
+	\end{oneparchoices}
+
+	\question IP addressing occurs at what layer of the OSI Model? \\
+	\begin{oneparchoices}
+		\choice application
+		\choice physical
+		\choice transport
+		\CorrectChoice network
+	\end{oneparchoices}
+
+	\question What networking term describes a particular set of rules at one layer that govern communication at that layer? \\
+	\begin{oneparchoices}
+		\choice duplex
+		\choice encapsulation
+		\choice error checking
+		\CorrectChoice protocol
+	\end{oneparchoices}
+
+	\question Which of the following is NOT a criterion for choosing a network media?\\
+	\begin{oneparchoices}
+		\CorrectChoice The type of data that can be transmitted.
+		\choice The maximum distance that the media can successfully carry a signal. \\
+		\choice The environment in which the media is installed.
+		\choice The cost of installing the media.
+	\end{oneparchoices}
+
+	\question What is the purpose of the OSI physical layer?
+	\begin{choices}
+		\choice controlling access to media.
+		\choice transmitting bits across the local media.
+		\choice performing error detection on received frames.
+		\CorrectChoice exchanging frames between nodes over physical network media.
+	\end{choices}
+
+	\question Which statement is correct about network protocols?
+	\begin{choices}
+		\choice Network protocols define the type of hardware that is used and how it is mounted in racks.
+		\CorrectChoice They define how messages are exchanged between the source and the destination.
+		\choice They all function in the network access layer of TCP/IP.
+		\choice They are only required for exchange of messages between devices on remote networks.
+	\end{choices}
+
+	\question What is the purpose of protocols in data communications?
+	\begin{choices}
+		\choice specifying the bandwidth of the channel or medium for each type of communication.
+		\choice specifying the device operating systems that will support the communication.
+		\CorrectChoice providing the rules required for a specific type of communication to occur.
+		\choice dictating the content of the message sent during communication.
+	\end{choices}
+
+	\question The process of prepending protocol information with information from another protocol is called: \\
+	\begin{oneparchoices}
+		\choice encoding
+		\choice framing
+		\choice packetizing
+		\CorrectChoice encapsulation
+	\end{oneparchoices}
+
+	\question When an Ethernet frame is sent out an interface, the destination MAC address indicates:
+	\begin{choices}
+		\choice The MAC address of the NIC card of a device, which is on this network or another network, that will receive the Ethernet frame.
+		\choice The MAC address of the NIC card that sent the Ethernet frame.
+		\CorrectChoice The MAC address of the device, which is on this network, that will receive the Ethernet frame.
+		\choice The MAC address of the router.
+	\end{choices}
+
+	\question What is one function of a Layer 2 switch?
+	\begin{choices}
+		\choice forwards data based on logical addressing.
+		\choice duplicates the electrical signal of each frame to every port.
+		\choice learns the port assigned to a host by examining the destination MAC address.
+		\CorrectChoice determines which interface is used to forward a frame based on the destination MAC address.
+	\end{choices}
+
+	\newpage
+
+	\question Which type of address does a switch use to build the MAC address table? \\    \begin{oneparchoices}
+		\choice destination MAC address
+		\CorrectChoice source MAC address
+		\choice destination IP address
+		\choice source IP address
+	\end{oneparchoices}
+
+	\question Refer to the exhibit below. The exhibit shows a small switched network and the contents of the MAC address table of the switch. PC1 has sent a frame addressed to PC3. What will the switch do with the frame?
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{ c }
+			\begin{minipage}{0.65\textwidth} % Use minipage to better control layout inside table
+				\centering
+				\includegraphics[width=0.6\textwidth]{./img/switched_network}
+			\end{minipage} \\
+		\end{tabular}
+	\end{table}
+	\begin{choices}
+		\choice The switch will discard the frame.
+		\choice The switch will forward the frame only to port 2.
+		\CorrectChoice The switch will forward the frame to all ports except port 4.
+		\choice The switch will forward the frame to all ports.
+	\end{choices}
+
+	\question How many octets exist in an IPv4 address? \\
+	\begin{oneparchoices}
+		\CorrectChoice 4
+		\choice 8
+		\choice 16
+		\choice 32
+	\end{oneparchoices}
+
+	\question How large are IPv4 addresses?
+	\begin{oneparchoices}
+		\choice 8 bits
+		\choice 16 bits
+		\choice 32 bits
+		\choice 64 bits
+	\end{oneparchoices}
+
+	\question What is the network number for an IPv4 address 172.16.34.10 with the subnet mask of 255.255.255.0? \\
+	\begin{oneparchoices}
+		\choice 10
+		\choice 34.10
+		\choice 172.16.0.0
+		\CorrectChoice 172.16.34.0
+	\end{oneparchoices}
+
+	\question Host-A has the IPv4 address and subnet mask 10.5.4.100 255.255.255.0. What is the network address of Host-A? \\
+	\begin{oneparchoices}
+		\choice 10.5.4.100
+		\CorrectChoice 10.5.4.0
+		\choice 10.0.0.0
+		\choice 10.5.0.0
+	\end{oneparchoices}
+
+	\question Host-B has the IPv4 address and subnet mask 172.16.4.100 255.255.0.0. What is the network address of Host-B? \\
+	\begin{oneparchoices}
+		\choice 172.16.4.100
+		\choice 172.0.0.0
+		\CorrectChoice 172.16.0.0
+		\choice 172.16.4.0
+	\end{oneparchoices}
+
+	\question[2] Host-A has the IPv4 address and subnet mask 10.5.4.100 255.255.255.0. Which of the following IPv4 addresses would be on the same network as Host-A? (Choose all that apply) \\
+	\begin{oneparchoices}
+		\choice 10.0.0.98
+		\choice 10.5.0.1
+		\CorrectChoice 10.5.4.1
+		\choice 10.5.100.4
+		\CorrectChoice 10.5.4.99
+	\end{oneparchoices}
+
+	\question[2] Host-B has the IPv4 address and subnet mask 172.16.4.100 255.255.0.0. Which of the following IPv4 addresses would be on the same network as Host-B? (Choose all that apply) \\
+	\begin{oneparchoices}
+		\choice 172.17.4.99
+		\choice 172.17.4.1
+		\choice 172.18.4.1
+		\CorrectChoice 172.16.4.99
+		\CorrectChoice 172.16.0.1
+	\end{oneparchoices}
+
+	\question[2] Host-C has the IPv4 address and subnet mask 192.168.1.50 255.255.255.0. Which of the following IPv4 addresses would be on the same network as Host-C? (Choose all that apply) \\
+	\begin{oneparchoices}
+		\choice 192.168.2.1
+		\choice 192.168.0.1
+		\CorrectChoice 192.168.1.100
+		\choice 192.168.0.100
+		\CorrectChoice 192.168.1.1
+	\end{oneparchoices}
+
+	\question A host is transmitting a broadcast. Which host or hosts will receive it? \\
+	\begin{oneparchoices}
+		\CorrectChoice all hosts in the same network.
+		\choice a specially defined group of hosts. \\
+		\choice the closest neighbor on the same network.
+		\choice all hosts on the internet.
+	\end{oneparchoices}
+
+	\question Which statement describes one purpose of the subnet mask setting for a host?
+	\begin{choices}
+		\choice It is used to describe the type of the subnet.
+		\choice It is used to identify the default gateway.
+		\CorrectChoice It is used to determine to which network the host is connected.
+		\choice It is used to determine the maximum number of bits within one packet that can be placed on a particular network.
+	\end{choices}
+
+	\question Determine how many network bits and host bits are there in a Class C IPv4 address.\\
+	\begin{oneparchoices}
+		\choice Network bits: 8, Host bits: 24
+		\CorrectChoice Network bits: 24, Host bits: 8 \\
+		\choice Network bits: 16, Host bits: 16
+		\choice Network bits: 32, Host bits: 0
+	\end{oneparchoices}
+
+	\question Determine how many network bits and host bits are there in a Class A IPv4 address. \\
+	\begin{oneparchoices}
+		\CorrectChoice Network bits: 8, Host bits: 24
+		\choice Network bits: 16, Host bits: 16 \\
+		\choice Network bits: 24, Host bits: 8
+		\choice Network bits: 32, Host bits: 0
+	\end{oneparchoices}
+
+	\newpage
+
+	\question[20] Given an IP address and Subnet Mask of \textbf{172.16.0.0 255.255.0.0}, answer the following question if the number of subnets created is 8. (Show your solution)
+	\begin{parts}
+		\part Determine how many bits you should borrow:
+		\part Determine the subnet mask:
+		\part Determine the usable hosts per subnet:
+		\part Determine the network address and the broadcast address for each subnet.
+		\begin{table}[h]
+			\centering
+			\begin{tabular}{l l l}
+				\toprule
+				           & \textbf{Network Address} & \textbf{Broadcast Address} \\ \midrule
+				1st subnet &                          &                            \\ \hline
+				2nd subnet &                          &                            \\ \hline
+				3rd subnet &                          &                            \\ \hline
+				4th subnet &                          &                            \\ \hline
+				5th subnet &                          &                            \\ \hline
+				6th subnet &                          &                            \\ \hline
+				7th subnet &                          &                            \\ \hline
+				8th subnet &                          &                            \\ \bottomrule
+			\end{tabular}
+		\end{table}
+	\end{parts}
+
+	\vspace{1cm}
+
+	\begin{tcolorbox}[title=IP Address Choices]
+		\begin{oneparchoices}
+			\choice \textbf{10.0.0.5}        % Private A
+			\choice \textbf{192.168.10.20}   % Private B
+			\choice \textbf{172.16.5.8}      % Private C
+			\choice \textbf{192.169.1.50}    % Public D
+			\choice \textbf{172.32.15.45}    % Public E
+			\choice \textbf{10.255.255.255}  % Private F
+			\choice \textbf{172.31.255.255}  % Private G
+			\choice \textbf{192.167.10.15}   % Public H
+			\choice \textbf{11.0.0.5}        % Public I
+			\choice \textbf{172.15.0.1}      % Public J
+			\choice \textbf{8.8.8.8}         % Public K
+			\choice \textbf{172.217.15.110}  % Public L
+			\choice \textbf{198.51.100.45}   % Public M
+			\choice \textbf{203.0.113.65}    % Public N
+			\choice \textbf{131.107.255.255} % Public O 
+			\choice \textbf{10.1.1.1}        % Private P
+			\choice \textbf{172.16.0.10}     % Private Q
+			\choice \textbf{192.168.50.5}    % Private R
+			\choice \textbf{172.31.10.200}   % Private S 
+			\choice \textbf{192.168.1.10}    % Private T
+		\end{oneparchoices}
+	\end{tcolorbox}
+
+	\question[10] Refer to the IP addresses above to identify the \emph{private} IPv4 addresses:
+	\question[10] Refer to the IP addresses above to identify the \emph{public} IPv4 addresses:
+\end{questions}
+
+\end{document}
